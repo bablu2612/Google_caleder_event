@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+<h1>You're logged in!</h1>
+
+<%= link_to "Sign Out", destroy_admin_session_path %>
+
+<h2>Calenders</h2>
+
+<h3>Events Today</h3>
+<% if @calender_event[0][:message].present? %>
+<%=  @calender_event[0][:message] %>
+
+<%  else %>
+
+
+<% @calender_event.each do |event| %>
+  <p>description: <%= event[:description] %></p>
+  <p>date : <%= event[:date] %></p><br />
+<% end %>
+<% end %>
+
+
+
+
+
+
+
+
+
+<h3>Events Weekly</h3>
+<% if @calender_event_weekly[0][:message].present? %>
+<%=  @calender_event[0][:message] %>
+
+<%  else %>
+
+
+<% @calender_event_weekly.each do |event| %>
+  <p>description: <%= event[:description] %></p>
+  <p>date : <%= event[:date] %></p><br />
+<% end %>
+<% end %>
